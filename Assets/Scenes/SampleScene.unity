@@ -476,7 +476,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 602803325}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728e2478e94e5564494721efb3f3f727, type: 3}
+  m_Script: {fileID: 11500000, guid: 09fbec58005fc6546a7724079d3282c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _healthStep: -5
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 724981448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d7b2b8389a3654387975ab87a5bba0, type: 3}
+  m_Script: {fileID: 11500000, guid: bf47c8dbb28d0924baf17fa2f5d0416a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &846503349
@@ -840,7 +840,6 @@ GameObject:
   - component: {fileID: 846503353}
   - component: {fileID: 846503352}
   - component: {fileID: 846503351}
-  - component: {fileID: 846503354}
   m_Layer: 0
   m_Name: checkbox
   m_TagString: Untagged
@@ -872,11 +871,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 846503349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9004d0ebce05ed745bcc4c4f9325a835, type: 3}
+  m_Script: {fileID: 11500000, guid: 94083ebcf42222d4a9301eccdb7a1bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: {fileID: 663199501}
+  charhp: {fileID: 663199501}
   hint: {fileID: 40531531}
+  character: {fileID: 724981453}
 --- !u!54 &846503352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -925,18 +925,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &846503354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846503349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081aa1ca429d6904fbb67f3ef2860d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &957325864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1848622184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 728e2478e94e5564494721efb3f3f727, type: 3}
+  m_Script: {fileID: 11500000, guid: 09fbec58005fc6546a7724079d3282c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _healthStep: 5

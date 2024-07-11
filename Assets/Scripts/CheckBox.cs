@@ -1,33 +1,36 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class CheckBox : MonoBehaviour
 {
-    public TMP_Text hp;
+    public TMP_Text charhp;
     public GameObject hint;
+
+    public CharacterScript character;
     private IHealthHolder healthHolder;
     private IHealthModifier healthModifier;
-    void Start()
+
+    private void Start()
     {
-        healthHolder = gameObject.GetComponent<IHealthHolder>();
+        healthHolder = character as IHealthHolder;
     }
 
     void OnGUI()
     {
         if (healthModifier != null & Event.current.Equals(Event.KeyboardEvent(KeyCode.E.ToString())))
         {
-            healthHolder.ChangeHealthPoints(healthModifier.HealthStep);
-            hp.text = healthHolder.HealthPoints.ToString();
+            healthHolder.ChangeHp(healthModifier.HealthStep);
+
+            charhp.text = healthHolder.HealthPoints.ToString();
         }
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        var hm = col.GetComponent<IHealthModifier>();
-        if (hm != null)
+        HealthModifier hm = col.GetComponent<HealthModifier>();
+        if (col.GetComponent<HealthModifier>() != null)
         {
             healthModifier = hm;
             Interact(true);
@@ -36,15 +39,15 @@ public class CheckBox : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
-        var hm = col.GetComponent<IHealthModifier>();
-        if (hm != null)
+        HealthModifier hm = col.GetComponent<HealthModifier>();
+        if (col.GetComponent<HealthModifier>() != null)
         {
             healthModifier = null;
             Interact(false);
         }
     }
 
-    void Interact(bool active)
+    public void Interact(bool active)
     {
         hint.SetActive(active);
     }
